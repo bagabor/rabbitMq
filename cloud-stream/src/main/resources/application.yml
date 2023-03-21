@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    stream:
+#      it creates and bind the queue for the exchange... if we leave it uncommented then the message will be consumed immediately
+#      function:
+#        definition: processor,consumer
+      bindings:
+        producer-out-0:
+          destination: sample-exchange
+          group: consumer
+#        processor-out-0:
+#          destination: sample-exchange
+#          group: consumer
+#        processor-in-0:
+#          destination: sample-exchange
+#          group: processor
+        consumer-in-0:
+          destination: sample-exchange
+          group: consumer
